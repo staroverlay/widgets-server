@@ -3,8 +3,8 @@ import { readdirSync, readFileSync, existsSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { logger } from "@/logger";
 
-// Resolve the apps directory from the current working directory of the widgets app
-const APPS_DIR = join(process.cwd(), "apps");
+// Resolve the apps directory from the current working directory of the widgets app (or via APPS_DIR env)
+const APPS_DIR = process.env.APPS_DIR || join(process.cwd(), "apps");
 
 interface AppMetadata {
     id: string;

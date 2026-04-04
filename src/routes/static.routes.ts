@@ -22,8 +22,8 @@ import { logger } from "@/logger";
  *    the token for authentication.
  */
 
-// Resolve the apps directory from the current working directory of the widgets app
-const APPS_DIR = join(process.cwd(), "apps");
+// Resolve the apps directory from the current working directory of the widgets app (or via APPS_DIR env)
+const APPS_DIR = process.env.APPS_DIR || join(process.cwd(), "apps");
 
 function serveWidgetFile(appId: string, filePath: string): Response {
     // Sanitise appId — no path separators allowed
