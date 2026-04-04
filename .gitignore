@@ -1,0 +1,29 @@
+# dependencies
+node_modules
+
+# output
+out
+dist
+
+# static widget bundles (local build artifacts — not committed)
+apps_dist
+
+# logs
+logs
+*.log
+
+# dotenv
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# caches
+.eslintcache
+.cache
+*.tsbuildinfo
+
+# OS
+.DS_Store
+.idea

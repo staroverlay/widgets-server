@@ -1,0 +1,6 @@
+[submodule "apps/nico-chat"]
+	path = apps/nico-chat
+	url = https://github.com/staroverlay/app-nico-chat
+[submodule "apps/media-reward"]
+	path = apps/media-reward
+	url = https://github.com/staroverlay/app-media-reward
