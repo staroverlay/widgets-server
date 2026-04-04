@@ -65,14 +65,13 @@ export const eventsPlugin = new Elysia({ prefix: "/events" })
                 widgetId: widget.id,
                 userId: widget.userId,
                 widgetToken: token,
-                integrationIds: integrations.map((i: any) => i.id),
                 integrations,
                 widget: {
                     id: widget.id,
                     appId: widget.appId,
                     displayName: widget.displayName,
                     settings: widget.settings,
-                    integrations: integrations.map((i: any) => i.public), // strictly public
+                    integrations: widget.integrations,
                     createdAt: widget.createdAt,
                     updatedAt: widget.updatedAt,
                     enabled: widget.enabled,

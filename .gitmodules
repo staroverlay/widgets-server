@@ -4,3 +4,6 @@
 [submodule "apps/media-reward"]
 	path = apps/media-reward
 	url = https://github.com/staroverlay/app-media-reward
+[submodule "apps/show-emote"]
+	path = apps/show-emote
+	url = https://github.com/staroverlay/app-show-emote
