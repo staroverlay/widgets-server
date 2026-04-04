@@ -25,7 +25,7 @@ app.use(
 // Security headers (minimal — this server only serves static files + WS)
 app.onAfterHandle(({ set }) => {
     set.headers["X-Content-Type-Options"] = "nosniff";
-    set.headers["X-Frame-Options"] = "SAMEORIGIN"; // widgets are embedded in iframes
+    set.headers["Content-Security-Policy"] = `frame-ancestors 'self' ${allowedOrigins.join(" ")}`;
     set.headers["Referrer-Policy"] = "strict-origin-when-cross-origin";
 });
 

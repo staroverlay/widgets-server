@@ -56,12 +56,14 @@ function serveWidgetFile(appId: string, filePath: string): Response {
         // SPA fallback — serve index.html for client-side routing
         const fallback = join(appDir, "index.html");
         if (existsSync(fallback)) {
-            return new Response(Bun.file(fallback));
+            const file = Bun.file(fallback);
+            return new Response(file, { headers: { "Content-Type": file.type } });
         }
         return new Response("Not found", { status: 404 });
     }
 
-    return new Response(Bun.file(target));
+    const file = Bun.file(target);
+    return new Response(file, { headers: { "Content-Type": file.type } });
 }
 
 export const staticPlugin = new Elysia({ prefix: "/widget" })

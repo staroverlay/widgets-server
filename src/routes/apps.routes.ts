@@ -120,5 +120,6 @@ export const appsRoutesPlugin = new Elysia()
             return new Response("Not found", { status: 404 });
         }
 
-        return new Response(Bun.file(resolved), { headers: { "Cache-Control": "public, max-age=3600" } });
+        const file = Bun.file(resolved);
+        return new Response(file, { headers: { "Cache-Control": "public, max-age=3600", "Content-Type": file.type } });
     });
