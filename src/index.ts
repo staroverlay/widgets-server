@@ -3,7 +3,6 @@ import { cors } from "@elysiajs/cors";
 
 import { env } from "./lib/env";
 import { logger } from "./logger";
-import { eventsPlugin } from "./events";
 import { staticPlugin } from "./routes/static.routes";
 import { appsRoutesPlugin } from "./routes/apps.routes";
 
@@ -40,10 +39,6 @@ app.get("/health", () => ({
 // Apps metadata registry
 app.use(appsRoutesPlugin);
 
-// WebSocket events endpoint
-// Handles: WS  /events/widget?token=<widget-token>
-app.use(eventsPlugin);
-
 // Static widget serving
 // Handles: GET /widget/:appId
 //          GET /widget/:appId/*
@@ -69,5 +64,4 @@ app.listen(env.PORT, () => {
     logger.info(`widget-server running on "${env.NODE_ENV}" mode`);
     logger.info(`Listening at http://localhost:${env.PORT}`);
     logger.info(`Static widgets at http://localhost:${env.PORT}/widget/<app-id>`);
-    logger.info(`WebSocket events at ws://localhost:${env.PORT}/events/widget?token=<token>`);
 });
