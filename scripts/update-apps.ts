@@ -39,8 +39,8 @@ for (const app of apps) {
     console.log(`============================================\n`);
 
     try {
-        execSync("pnpm install", { cwd: appPath, stdio: "inherit" });
-        execSync("pnpm run build", { cwd: appPath, stdio: "inherit" });
+        execSync("bun install", { cwd: appPath, stdio: "inherit" });
+        execSync("bun run build", { cwd: appPath, stdio: "inherit" });
     } catch (e) {
         console.error(`❌ Failed to process app: ${app}`);
     }

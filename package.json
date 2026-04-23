@@ -7,6 +7,7 @@
         "build:apps": "bun run scripts/build.ts",
         "addapp": "bun run scripts/addapp.ts",
         "update-apps": "bun run scripts/update-apps.ts",
+        "clean-apps": "bun run scripts/clean-submodules.ts",
         "preinstall": "bun run scripts/preinstall.ts",
         "start": "NODE_ENV=production bun run dist/index.js"
     },
