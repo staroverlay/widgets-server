@@ -39,7 +39,7 @@ for (const app of apps) {
     console.log(`============================================\n`);
 
     try {
-        execSync("pnpm install", { cwd: appPath, stdio: "inherit" });
+        execSync("bun install", { cwd: appPath, stdio: "inherit" });
     } catch (e) {
         console.error(`❌ Failed to install dependencies for app: ${app}`);
         process.exit(1);

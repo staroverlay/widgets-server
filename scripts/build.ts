@@ -21,7 +21,7 @@ for (const app of apps) {
     console.log(`============================================\n`);
 
     try {
-        execSync("pnpm run build", { cwd: appPath, stdio: "inherit" });
+        execSync("bun run build", { cwd: appPath, stdio: "inherit" });
     } catch (e) {
         console.error(`❌ Failed to build app: ${app}`);
         process.exit(1);

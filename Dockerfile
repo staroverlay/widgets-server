@@ -1,7 +1,7 @@
 FROM oven/bun:1 AS base
 
-# Install git and pnpm for submodule sync and app builds
-RUN apt-get update && apt-get install -y git && npm install -g pnpm
+# Install git for submodule sync and app builds
+RUN apt-get update && apt-get install -y git
 
 WORKDIR /app
 
