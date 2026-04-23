@@ -3,12 +3,12 @@
     "version": "1.0.0",
     "scripts": {
         "dev": "NODE_ENV=development bun run --watch src/index.ts",
-        "start": "NODE_ENV=production bun run src/index.ts",
         "build": "bun build --minify --target node --outfile dist/index.js src/index.ts",
         "build:apps": "bun run scripts/build.ts",
         "addapp": "bun run scripts/addapp.ts",
         "update-apps": "bun run scripts/update-apps.ts",
-        "preinstall": "bun run scripts/preinstall.ts"
+        "preinstall": "bun run scripts/preinstall.ts",
+        "start": "NODE_ENV=production bun run dist/index.js"
     },
     "dependencies": {
         "@elysiajs/cors": "^1.2.3",
