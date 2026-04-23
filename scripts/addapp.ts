@@ -25,12 +25,12 @@ try {
     console.log(`\n============================================`);
     console.log(`📦 Installing dependencies for ${appName}...`);
     console.log(`============================================\n`);
-    execSync("pnpm install", { cwd: appPath, stdio: "inherit" });
+    execSync("bun install", { cwd: appPath, stdio: "inherit" });
 
     console.log(`\n============================================`);
     console.log(`🛠️ Building ${appName}...`);
     console.log(`============================================\n`);
-    execSync("pnpm run build", { cwd: appPath, stdio: "inherit" });
+    execSync("bun run build", { cwd: appPath, stdio: "inherit" });
 
     console.log("\n✅ App added and built successfully!");
 
